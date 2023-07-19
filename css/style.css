@@ -1,7 +1,7 @@
 :root{
     --bgBody: #000;
     --container : #1d1d1d;
-    --utilitarios: #7a7676;
+    --utilitarios: #898989;
     --progressoVerde: #008000;
     --progressoLaranja: #F37021;
     --progressoVermelho: #B22222;
@@ -78,8 +78,10 @@ html,body{
     width: 95%;
     height: 50px;
     border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.5); /* Cor de fundo com transparência */
-    backdrop-filter: blur(10px); /* Desfoque para criar o efeito de vidro */
+    background-color: rgba(255, 255, 255, 0.15); /* Cor de fundo com transparência */
+    backdrop-filter: blur(15px); /* Desfoque para criar o efeito de vidro */
+    box-shadow: 0 0 10px 1px rgba(0,0,0,0.35);
+    -webkit-backdrop-filter: blur(15px);
 }
 
 #codigo .item{
@@ -89,6 +91,7 @@ html,body{
     transform: scale(-1);
     filter: blur(3px);
     transition: transform .2s linear;
+    box-shadow: none;
 }
 
 #codigo .item.acertou{
@@ -131,6 +134,7 @@ html,body{
     height: 55px;
     background-color: var(--item);
     border-radius: 5px;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 1);
 }
 
 .ativo{
