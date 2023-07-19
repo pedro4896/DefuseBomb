@@ -105,10 +105,13 @@ function ganhou(){
 }
 
 function perdeu() {
-    reset();
-    resetBomb();
+    endGame.style.animation = 'explode .5s linear 1';
     explosaoAudio.play();
     EndGame("Sequência Errada!","perdeu","ganhou");
+    endGame.addEventListener("animationend", function(){
+        reset();
+        resetBomb();
+    })
 }
 
 function reset(){
@@ -195,7 +198,6 @@ function verificaLetra(event){
                 element.classList.add("ativo");
             }
             pontuacao++;
-            console.log(pontuacao)
             posicao++;
         }else{
             erroAudio.play();
@@ -220,6 +222,7 @@ function reiniciar(){
     jogo.style.display = 'block';
     endGame.style.display = 'none';
     barraProgresso.style.animation = 'none';
+    endGame.style.animation = 'none';
     itens.forEach(element => {
         element.textContent = '';
     });

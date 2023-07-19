@@ -29,6 +29,26 @@
     }
 }
 
+@keyframes explode {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
 .botao button:focus{
     outline: none;
     box-shadow: none;
@@ -252,6 +272,7 @@ html,body{
 
 #resultado h2{
     font-size: 3rem;
+    animation: fade-in 1s forwards;
 }
 
 .ganhou{
