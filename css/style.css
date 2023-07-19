@@ -1,0 +1,272 @@
+:root{
+    --bgBody: #000;
+    --container : #1d1d1d;
+    --utilitarios: #7a7676;
+    --progressoVerde: #008000;
+    --progressoLaranja: #F37021;
+    --progressoVermelho: #B22222;
+    --item: #fff;
+    --letra: #000;
+    --ativo: #2980b9;
+}
+
+@keyframes progress {
+    100%{
+        width: 100%;
+        background-color: var(--progressoVerde);
+    }
+    59%{
+        width: 59%;
+        background-color: var(--progressoLaranja);
+    }
+    29%{
+        width: 29%;
+        background-color: var(--progressoVermelho);
+    }
+    0%{
+        width: 0%;
+        background-color: var(--progressoVermelho);
+    }
+}
+
+.botao button:focus{
+    outline: none;
+    box-shadow: none;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+html,body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: var(--bgBody);
+    font-size: 12px;
+    font-family: 'Nunito Sans',sans-serif;
+    font-weight: 600;
+    color: var(--utilitarios);
+}
+
+.container{
+    padding: 0;
+    width: 550px;
+    height: 300px;
+    background-color: var(--container);
+    border-radius: 10px;
+}
+
+.titulo{
+    text-transform: uppercase;
+    text-align: center;
+    padding: .5rem;
+    border-bottom: 1px solid var(--utilitarios);
+}
+
+.titulo h2{
+    margin: 0;
+}
+
+#codigo{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    width: 95%;
+    height: 50px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.5); /* Cor de fundo com transparência */
+    backdrop-filter: blur(10px); /* Desfoque para criar o efeito de vidro */
+}
+
+#codigo .item{
+    background: transparent;
+    color: var(--progressoVermelho);
+    font-size: 2rem;
+    transform: scale(-1);
+    filter: blur(3px);
+    transition: transform .2s linear;
+}
+
+#codigo .item.acertou{
+    filter: blur(0px);
+    color: var(--progressoVerde);
+    transform: scale(1);
+}
+
+.progress{
+    margin: 0 auto;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    width: 95%;
+    height: 12px;
+    border-radius: 10px;
+    background-color: var(--utilitarios);
+}
+
+.progress-bar{
+    width: 100%;
+    background-color: var(--progressoVerde);
+}
+
+.letras{
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 10px;
+}
+
+.item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7rem;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--letra);
+    padding: 0;
+    width: 55px;
+    height: 55px;
+    background-color: var(--item);
+    border-radius: 5px;
+}
+
+.ativo{
+    position: relative;
+    top: -10px;
+    box-shadow: 0px 0px 5px 3px var(--ativo);
+}
+
+.desativado{
+    background-color: var(--utilitarios);
+    color: var(--container);
+}
+
+.botao{
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+#container-select{
+    position: absolute;
+    right: 15px;
+    border: 1px solid var(--utilitarios);
+    border-radius: 5px;
+    padding-right: 10px;
+}
+
+.botao select{
+    width: 80px;
+    height: 50px;
+    outline: none;
+    font-size: 1.5rem;
+    text-align: center;
+    color: var(--utilitarios);
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding-right: 20px;
+    background: transparent url('../img/arrow-down.svg') no-repeat right center;
+    border: 0;
+    cursor: pointer;
+
+}
+
+.botao select option{
+    background-color: var(--bgBody);
+}
+
+#audio{
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--utilitarios);
+    border-radius: 5px;
+    background: transparent url('../img/audio.png') no-repeat center;
+    background-size: 90%;
+    cursor: pointer;
+    outline: none;
+}
+ 
+.botao button.btn, #EndGame button{
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: var(--progressoVerde);
+    border-radius: 5px;
+    border: 1px solid var(--progressoVerde);
+    width: 30%;
+    height: 50px;
+    background-color: transparent;
+    outline: none;
+    transition: background .5s ease-in;
+}
+
+.botao button.btn.iniciar{
+    color: var(--progressoVerde);
+    border-color: var(--progressoVerde);
+    outline: none;
+}
+
+.botao button.btn.iniciar:hover,.botao button.btn:hover{
+    background-color: var(--progressoVerde);
+    color: var(--item);
+}
+
+.botao button.btn.parar{
+    color: var(--progressoVermelho);
+    border-color: var(--progressoVermelho);
+    outline: none;
+}
+
+.botao button.btn.parar:hover{
+    background-color: var(--progressoVermelho);
+    color: var(--item);
+}
+
+#EndGame{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 550px;
+}
+
+#resultado{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    color: var(--item);
+    letter-spacing: 5px;
+}
+
+#resultado h2{
+    font-size: 3rem;
+}
+
+.ganhou{
+    background: linear-gradient(to right,#008000, #0fa30f, #099009);
+}
+
+.perdeu{
+    background: linear-gradient(to right,#B22222, #be1414, #770b0b);
+}
+
+#EndGame button{
+    border-color: var(--item);
+    color: var(--item);
+    margin-top: 10px;
+    width: 32%;
+}
+
+#EndGame button:hover{
+    background-color: var(--item);
+    color: var(--bgBody);
+}
+
