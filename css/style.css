@@ -260,6 +260,7 @@ html,body{
     flex-direction: column;
     align-items: center;
     width: 550px;
+    height: 300px;
 }
 
 #resultado{
