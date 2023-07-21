@@ -61,6 +61,7 @@
 
 html,body{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100%;
@@ -295,3 +296,11 @@ html,body{
     color: var(--bgBody);
 }
 
+.icons{
+    margin-top: 15px;
+}
+
+.icons img{
+    margin-right: 10px;
+    height: 25px;
+}
